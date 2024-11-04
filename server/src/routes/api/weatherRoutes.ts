@@ -7,7 +7,7 @@ const router = Router();
 // POST Request with city name to retrieve weather data
 router.post('/', async (req, res) => {
   try {
-    const cityName = req.body.city;
+    const cityName = req.body.cityName;
     const weather = await WeatherService.getWeatherForCity(cityName);
     await HistoryService.addCity(cityName);
     res.json(weather);
